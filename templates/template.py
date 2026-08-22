@@ -19,5 +19,6 @@ def main(input_file: Path) -> None:
 
 
 if __name__ == "__main__":
-    input_file = Path(__file__).resolve().parent.parent / f"inputs/{Path(__file__).stem}.txt"
+    root_dir = Path(__file__).resolve().parent.parent
+    input_file = root_dir / "inputs" / f"{Path(__file__).stem}.txt"
     main(input_file)

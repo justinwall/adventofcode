@@ -28,12 +28,16 @@ def part2(presents: list[Present]) -> int:
 def main(input_file: Path) -> None:
     input_data = input_file.read_text()
 
-    presents = [[int(dimension.strip()) for dimension in line.split("x")] for line in input_data.splitlines()]
+    presents = [
+        [int(dimension.strip()) for dimension in line.split("x")]
+        for line in input_data.splitlines()
+    ]
 
     print(part1(presents))
     print(part2(presents))
 
 
 if __name__ == "__main__":
-    input_file = Path(__file__).resolve().parent.parent / f"inputs/{Path(__file__).stem}.txt"
+    root_dir = Path(__file__).resolve().parent.parent
+    input_file = root_dir / "inputs" / f"{Path(__file__).stem}.txt"
     main(input_file)
